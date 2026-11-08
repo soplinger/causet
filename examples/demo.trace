@@ -1,0 +1,13 @@
+# Three processes: a client (C), a server (S) and a cache (K).
+C local start
+C send req1 to S
+K local warm-up
+S recv req1
+S send lookup1 to K
+K recv lookup1
+K send hit1 to S
+S recv hit1
+S send reply1 to C
+C recv reply1
+C send log1 to K
+S local done
